@@ -1,0 +1,314 @@
+    /* Import Stranger Things inspired fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Orbitron:wght@400;700;900&family=Righteous&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Eater&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
+
+    /* Main container styling */
+    div {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #8B0000 100%);
+    min-height: 100vh;
+    padding: 2rem;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    }
+
+    /* Add subtle animated background effect */
+    div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+    animation: backgroundPulse 4s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+    }
+
+    /* Add "011" Stranger Things reference in background */
+    div::after {
+    content: '011';
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    font-family: 'Eater', serif;
+    font-size: 12rem;
+    color: rgba(255, 0, 0, 0.08);
+    text-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.1),
+        0 0 40px rgba(255, 0, 0, 0.05);
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 1;
+    animation: subtleGlow 6s ease-in-out infinite alternate;
+    letter-spacing: 1rem;
+    font-weight: normal;
+    }
+
+    @keyframes subtleGlow {
+    0% { 
+        opacity: 0.3; 
+        text-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.1),
+        0 0 40px rgba(255, 0, 0, 0.05);
+    }
+    100% { 
+        opacity: 0.6; 
+        text-shadow: 
+        0 0 30px rgba(255, 0, 0, 0.15),
+        0 0 60px rgba(255, 0, 0, 0.08);
+    }
+    }
+
+    @keyframes backgroundPulse {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+    }
+
+    /* Ensure content is above background effect */
+    div > * {
+    position: relative;
+    z-index: 2;
+    }
+
+    /* Top heading styling */
+    .topheading {
+    font-size: 4rem;
+    font-family: "Eater", serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    color: #ff0000;
+    margin-bottom: 3rem;
+    letter-spacing: 4px;
+    animation: flicker 2.5s infinite;
+    transform: perspective(500px) rotateX(15deg);
+    text-shadow: 0 0 3px #ff0000, 0 0 6px #990000;
+    }
+
+    /* @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 3px #ff0000, 0 0 6px #990000;
+    }
+    20%, 24%, 55% {
+        opacity: 0.5;
+        text-shadow: none;
+    }
+    } */
+
+
+    @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    80% { opacity: 0.8; }
+    }
+
+    /* H2 styling - Main titles */
+    h2 {
+        font-family: "Asimovian", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(255, 0, 0, 0.3);
+    margin: 2.5rem 0 1.5rem 0;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    position: relative;
+    }
+
+    /* Add underline effect to h2 */
+    h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+    animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+    0% { box-shadow: 0 0 5px #ff0000; }
+    60% { box-shadow: 0 0 20px #ff0000; }
+    }
+
+    /* H3 styling - Regular paragraphs */
+    h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #e0e0e0;
+    line-height: 1.8;
+    text-align: justify; /* Justified text */
+    text-justify: inter-word; /* Better word spacing for justification */
+    margin: 2rem auto;
+    max-width: 900px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Special styling for the first h3 (subtitle) - keep centered */
+    h3:first-of-type {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    text-align: center; /* Keep subtitle centered */
+    text-justify: none;
+    }
+
+    /* Card styling for the last h3 element */
+    h3:last-of-type {
+    background: linear-gradient(135deg, 
+        rgba(139, 0, 0, 0.2) 0%, 
+        rgba(255, 0, 0, 0.1) 50%, 
+        rgba(139, 0, 0, 0.2) 100%);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 3rem auto;
+    max-width: 1000px;
+    box-shadow: 
+        0 8px 32px rgba(255, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(255, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: justify; /* Justified text in card */
+    text-justify: inter-word;
+    hyphens: auto; /* Add hyphenation for better justification */
+    word-spacing: 0.1em; /* Slightly increase word spacing */
+    }
+
+    /* Hover effect for the card */
+    h3:last-of-type:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 12px 40px rgba(255, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 0 1px rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.5);
+    }
+
+    /* Add animated border effect to the card */
+    h3:last-of-type::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(255, 0, 0, 0.1), 
+        transparent, 
+        rgba(139, 0, 0, 0.1));
+    background-size: 400% 400%;
+    border-radius: 20px;
+    animation: borderAnimation 4s ease-in-out infinite;
+    pointer-events: none;
+    }
+
+    @keyframes borderAnimation {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    }
+
+    /* Add corner accents to the card */
+    h3:last-of-type::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #ff0000;
+    border-right: 2px solid #ff0000;
+    opacity: 0.7;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+    .topheading {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        margin: 2rem 0 1rem 0;
+    }
+    
+    h3 {
+        font-size: 0.7rem;
+        padding: 1rem;
+        margin: 1.3rem auto;
+        text-align: left; /* On mobile, use left alignment instead of justify */
+    }
+    
+    h3:first-of-type {
+        font-size: 1.3rem;
+        text-align: center; /* Keep subtitle centered on mobile */
+    }
+    
+    h3:last-of-type {
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 1rem;
+        text-align: left; /* Better readability on mobile */
+        word-spacing: normal;
+        hyphens: none;
+    }
+    
+    /* Adjust 011 background for mobile */
+    div::after {
+        font-size: 6rem;
+        top: 15%;
+        right: -5%;
+        opacity: 0.4;
+    }
+    
+    div {
+        padding: 1rem;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .topheading {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1rem;
+    }
+    
+    h3:last-of-type {
+        padding: 1.5rem;
+    }
+    
+    /* Further adjust 011 for small screens */
+    div::after {
+        font-size: 4rem;
+        top: 10%;
+        right: -10%;
+        opacity: 0.3;
+    }
+    }

@@ -1,4 +1,4 @@
-    /* Import Stranger Things inspired fonts */
+/* Import Stranger Things inspired fonts */
     @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Orbitron:wght@400;700;900&family=Righteous&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Eater&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
@@ -78,6 +78,8 @@
 
     /* Top heading styling */
     .topheading {
+        justify-content: center;
+        align-items: center;
     font-size: 4rem;
     font-family: "Eater", serif;
     font-weight: 600;
@@ -194,34 +196,7 @@
     word-spacing: 0.1em; /* Slightly increase word spacing */
     }
 
-    /* Hover effect for the card */
-    h3:last-of-type:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 12px 40px rgba(255, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        0 0 0 1px rgba(255, 0, 0, 0.2);
-    border-color: rgba(255, 0, 0, 0.5);
-    }
-
-    /* Add animated border effect to the card */
-    h3:last-of-type::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, 
-        transparent, 
-        rgba(255, 0, 0, 0.1), 
-        transparent, 
-        rgba(139, 0, 0, 0.1));
-    background-size: 400% 400%;
-    border-radius: 20px;
-    animation: borderAnimation 4s ease-in-out infinite;
-    pointer-events: none;
-    }
+    
 
     @keyframes borderAnimation {
     0%, 100% { background-position: 0% 50%; }
@@ -239,6 +214,31 @@
     border-top: 2px solid #ff0000;
     border-right: 2px solid #ff0000;
     opacity: 0.7;
+    }
+
+    /* Image centering styles */
+    img {
+        display: block;
+        margin: 2rem auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 
+            0 8px 32px rgba(255, 0, 0, 0.2),
+            0 4px 16px rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(255, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Hover effect for images */
+    img:hover {
+        transform: scale(1.05);
+        box-shadow: 
+            0 12px 40px rgba(255, 0, 0, 0.3),
+            0 6px 20px rgba(0, 0, 0, 0.4);
+        border-color: rgba(255, 0, 0, 0.5);
     }
 
     /* Responsive design */
@@ -274,6 +274,17 @@
         hyphens: none;
     }
     
+    /* Responsive image styles */
+    img {
+        margin: 1.5rem auto;
+        border-radius: 8px;
+        max-width: 95%;
+    }
+    
+    img:hover {
+        transform: scale(1.02);
+    }
+    
     /* Adjust 011 background for mobile */
     div::after {
         font-size: 6rem;
@@ -302,6 +313,12 @@
     
     h3:last-of-type {
         padding: 1.5rem;
+    }
+    
+    /* Mobile image adjustments */
+    img {
+        margin: 1rem auto;
+        max-width: 90%;
     }
     
     /* Further adjust 011 for small screens */

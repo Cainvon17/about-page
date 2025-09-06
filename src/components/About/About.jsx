@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div>
         <Navbar />
-        <h1 className='topheading'>ABOUT EVENT</h1>
+        <img className='topheading' src="https://fontmeme.com/permalink/250903/36cf2624ee2f42b50324096fb28a8fbd.png" />
         <h2>The Ultimate Battle of Wits, Speed & Survival</h2>
         <h3>Step into Techno Arena, an electrifying competition inspired by the mystery and thrill of Stranger Things.</h3>
         <h2>Seven games But One ultimate winner!</h2>
